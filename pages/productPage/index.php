@@ -21,7 +21,7 @@ $productsByNation = [
     'earth' => ['title' => 'Earth Kingdom', 'items' => []],
     'air' => ['title' => 'Air Nomads', 'items' => []],
 ];
-
+//hello
 while ($row = pg_fetch_assoc($result)) {
     $image = $row['image_url'] ?? '';
     if (str_contains($image, 'fire'))
