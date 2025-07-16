@@ -8,11 +8,11 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $name = trim($_POST['name'] ?? '');
 $price = (float) ($_POST['price'] ?? 0);
-$stock_quantity = (int) ($_POST['stock_quantity'] ?? 0);
 $image = trim($_POST['image_url'] ?? '');
+$quantity = (int) ($_POST['quantity'] ?? 0);
 $desc = trim($_POST['description'] ?? '');
 
-if (!$name || $price <= 0 || $stock_quantity < 0) {
+if (!$name || $price <= 0 || $quantity < 0) {
     header("Location: /pages/adminPage/index.php");
     exit;
 }
@@ -32,9 +32,8 @@ if (!$conn) {
 
 pg_query_params(
     $conn,
-    "INSERT INTO items (name, price, stock_quantity, image_url, description)
-     VALUES ($1, $2, $3, $4, $5)",
-    [$name, $price, $stock_quantity, $image, $desc]
+    "INSERT INTO items (name, price, image_url, stock_quantity, description) VALUES ($1, $2, $3, $4, $5)",
+    [$name, $price, $image, $quantity, $desc]
 );
 
 pg_close($conn);

@@ -24,17 +24,21 @@ ob_start();
     </select>
 </div>
 
-<!-- Add Product Form -->
 <section class="admin-card">
     <div class="admin-card-header">Add New Product</div>
     <div class="admin-card-body">
         <form id="productForm" class="admin-form" method="POST" action="/handlers/admin/addProduct.handler.php">
             <input type="text" placeholder="Product Name" name="name" required>
             <input type="number" placeholder="Price (₱)" name="price" required>
-            <input type="number" placeholder="Stock Quantity" name="stock_quantity" required min="0">
             <input type="url" placeholder="Image URL" name="image_url">
-            <textarea name="description" placeholder="Product Description" rows="2"></textarea>
-            <button type="submit" class="admin-btn">Add Product</button>
+            <input type="number" placeholder="Stock Quantity" name="quantity" required>
+            <textarea name="description" placeholder="Product Description" rows="2"
+                style="width: 100%; padding: 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; resize: vertical; font-family: inherit;"></textarea>
+
+            <!-- Centered Add Button -->
+            <div style="display: flex; justify-content: center; margin-top: 10px;">
+                <button type="submit" class="admin-btn">Add Product</button>
+            </div>
         </form>
     </div>
 </section>
@@ -52,8 +56,8 @@ ob_start();
                 <input type="hidden" name="item_id" value="<?= $item['item_id'] ?>">
                 <input type="text" name="name" value="<?= htmlspecialchars($item['name']) ?>" required>
                 <input type="number" name="price" value="<?= $item['price'] ?>" required>
-                <textarea name="description"
-                    placeholder="Description"><?= htmlspecialchars($item['description'] ?? '') ?></textarea>
+                <textarea name="description" placeholder="Description"
+                    style="width: 100%; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; resize: vertical; font-family: inherit;"><?= htmlspecialchars($item['description'] ?? '') ?></textarea>
 
                 <div style="display: flex; gap: 10px; margin-top: 10px;">
                     <button type="submit" class="add-to-cart-btn">Save</button>
