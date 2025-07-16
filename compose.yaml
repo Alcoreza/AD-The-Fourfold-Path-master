@@ -1,0 +1,49 @@
+services:
+  ad-the-fourfold-path:
+    build:
+      context: .
+    container_name: ad-the-fourfold-path-service
+    ports:
+      - "8000:8000"
+    develop:
+      watch:
+        - path: .
+          target: /var/www/html
+          action: sync
+        - path: ./composer.json
+          action: rebuild
+        - path: ./composer.lock
+          action: rebuild
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:latest
+    container_name: ad-the-fourfold-path-mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: totodile
+      MONGO_INITDB_ROOT_PASSWORD: number158
+      MONGO_INITDB_DATABASE: fourfoldpathmongodb
+    ports:
+      - "27111:27017"
+    volumes:
+      - ad-the-fourfold-path-mongodb:/data/db/mongodb
+
+  postgresql:
+    image: postgres:15
+    container_name: ad-the-fourfold-path-postgresql
+    restart: always
+    environment:
+      POSTGRES_USER: totodile
+      POSTGRES_PASSWORD: number158
+      POSTGRES_DB: fourfoldpathpostgredb
+    ports:
+      - "5112:5432"
+    volumes:
+      - ad-the-fourfold-path-postgresql:/data/db/postgresql
+
+volumes:
+  ad-the-fourfold-path-mongodb:
+    driver: local
+  ad-the-fourfold-path-postgresql:
+    driver: local

@@ -1,0 +1,116 @@
+body {
+  font-family: "Caudex", serif;
+  background-color: #f2f0ea;
+}
+
+h2 {
+  font-family: "Uncial Antiqua", serif;
+  color: #3e2c18;
+}
+
+.card-header {
+  font-weight: bold;
+  background-color: #ffc37f;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  color: #3e2c18;
+}
+
+.card-text {
+  font-size: 0.95rem;
+}
+
+.admin-container {
+  max-width: 1500px;
+  margin: 100px auto 40px;
+  padding: 20px;
+}
+
+.admin-title {
+  text-align: center;
+  font-family: "Uncial Antiqua", serif;
+  font-size: 2.5em;
+  color: #3e2c18;
+  margin-bottom: 40px;
+}
+
+.admin-filter-wrapper {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.element-filter {
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-family: "Caudex", serif;
+  font-size: 1em;
+}
+
+.admin-card {
+  background-color: #f5e4c3;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  margin-bottom: 50px;
+  overflow: hidden;
+}
+
+.admin-card-header {
+  background-color: #764c12;
+  color: white;
+  text-align: center;
+  padding: 15px 20px;
+  font-size: 1.3em;
+  font-family: "Uncial Antiqua", serif;
+}
+
+.admin-card-body {
+  padding: 20px;
+}
+
+.admin-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.admin-form input,
+.admin-form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: "Caudex", serif;
+}
+
+.admin-btn {
+  grid-column: span 4;
+  justify-self: center;
+  background-color: #764c12;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-family: "Caudex", serif;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.admin-btn:hover {
+  background-color: #ab701e;
+}
+
+.product-list-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.product-card img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}

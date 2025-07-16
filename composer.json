@@ -1,0 +1,31 @@
+{
+    "name": "mania/ad-the-fourfold-path",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Garlynd",
+            "email": "weinard21@gmail.com"
+        },
+        {
+            "name": "Alcoreza",
+            "email": "202310642@fit.edu.ph"
+        },
+        {
+            "name": "Clive-04",
+            "email": "202310384@fit.edu.ph"
+        },
+        {
+            "name": "Trebzo",
+            "email": "202310393@fit.edu.ph"
+        }
+    ],
+    "scripts": {
+        "start": "php -S localhost:8000 router.php",
+           "postgresql:reset": "docker compose exec ad-the-fourfold-path php utils/dbResetPostgresql.util.php",
+            "postgresql:migrate": "docker compose exec ad-the-fourfold-path php utils/dbMigratePostgresql.util.php",
+           "postgresql:seed": "docker compose exec ad-the-fourfold-path php utils/dbSeederPostgresql.util.php"
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}

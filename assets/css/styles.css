@@ -1,0 +1,343 @@
+body {
+  background: #f5e4c3 url("/assets/img/paperFibers.jpg") no-repeat center center
+    fixed;
+  font-family: "Caudex", Georgia, serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-size: cover;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(60, 43, 19, 0.2); /* very subtle background for blur */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(12px); /* for Safari */
+  padding: 15px 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-brand {
+  font-size: 1.5em;
+  color: #f5e4c3;
+  font-family: "Uncial Antiqua", Georgia, serif;
+}
+
+.nav-welcome {
+  color: #f5e4c3;
+  font-family: "Uncial Antiqua", Georgia, serif;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.nav-links li a {
+  color: #f5e4c3;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links li:last-child {
+  margin-right: 20px;
+}
+
+.nav-links li a:hover {
+  color: #ffd28c;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 100px 20px;
+  color: white;
+  background: url("/assets/img/headerBG.jpg") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.9);
+  min-height: 75vh;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 0;
+}
+
+.hero * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 5em;
+  font-family: "Uncial Antiqua", Georgia, serif;
+  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.8);
+}
+
+.tagline {
+  font-style: italic;
+  font-size: 2em;
+  margin-top: 10px;
+}
+
+.home-page main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("/assets/img/scroll.jpg") no-repeat center center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.496);
+  background-size: cover;
+  opacity: 0.65;
+  z-index: -1;
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  text-decoration: none;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.intro-section {
+  padding: 30px 30px;
+  text-align: center;
+}
+
+.intro-section p {
+  font-size: 2em;
+  line-height: 1.6em;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #764c12;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.ribbon-container {
+  position: relative;
+  width: 100vw; /* full viewport width */
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background: url('/assets/img/paperFibers.jpg') no-repeat center center;
+  background-size: cover;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.ribbon-text {
+  font-size: 3em;
+  color: #56370a;
+  font-family: 'Uncial Antiqua', Georgia, serif;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+  margin: 0;
+}
+
+
+.explore-btn {
+  display: inline-block;
+  background-color: #764c12;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 30px;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.explore-btn:hover {
+  background-color: #ab701e;
+}
+
+.element-cards {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.element-cards h2 {
+  font-family: "Uncial Antiqua", Georgia, serif;
+  font-size: 2.8em;
+  margin-bottom: 30px;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.card {
+  position: relative;
+  background-color: #f5e4c3;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  overflow: hidden;
+  color: #2d1b00;
+  text-align: center;
+  min-height: 280px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.card.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+.card:hover::before {
+  opacity: 0;
+}
+
+.card * {
+  position: relative;
+  z-index: 1;
+}
+
+.card h3 {
+  font-family: "Uncial Antiqua", Georgia, serif;
+  font-size: 2.8em;
+  margin-bottom: 12px;
+  color: #3e2c18;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.card p.description {
+  font-size: 1.5em;
+  line-height: 1.6em;
+}
+
+.card:hover h3,
+.card:hover p.description {
+  color: inherit;
+}
+
+.card h3,
+.card p.description {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.card:hover h3,
+.card:hover p.description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card.fire:hover {
+  background-color: #e25822;
+  color: #2d1b00;
+}
+
+.card.water:hover {
+  background-color: #1e81b0;
+  color: #2d1b00;
+}
+
+.card.air:hover {
+  background-color: #b4d9db;
+  color: #2d1b00;
+}
+
+.card.earth:hover {
+  background-color: #7a5e3c;
+  color: #2d1b00;
+}
+
+.card.fire::before {
+  background-image: url("/assets/img/fireSymbol");
+}
+
+.card.water::before {
+  background-image: url("/assets/img/waterSymbol");
+}
+
+.card.air::before {
+  background-image: url("/assets/img/airSymbol");
+}
+
+.card.earth::before {
+  background-image: url("/assets/img/earthSymbol");
+}
+
+.site-footer {
+  background-color: #3c2b13;
+  text-align: center;
+  color: #f5e4c3;
+  padding: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.footer-brand {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+  font-family: "Uncial Antiqua", Georgia, serif;
+}
+
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr; /* 1 column on smaller screens */
+  }
+}
